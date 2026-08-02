@@ -1,55 +1,258 @@
-# 🖊️ AirWrite AI
+# 🖌️ AirWrite AI
 
-An interactive web application that enables users to write or draw in the air using hand gestures via a webcam. Built with Next.js, MediaPipe, Flask, and Tesseract OCR.
+> **Write in the Air. Convert to Text with AI.**
+
+AirWrite AI is a full-stack AI-powered web application that allows users to write or draw in the air using their webcam. It uses **Google MediaPipe** for real-time hand tracking and **Tesseract OCR** to recognize handwritten text from a virtual canvas.
+
+This project combines **Computer Vision**, **Optical Character Recognition (OCR)**, and **Modern Web Development** to create an interactive and intelligent handwriting recognition system.
 
 ---
 
-## 🌟 Features
+## 🚀 Features
 
-* **Real-time Air Writing:** Detects finger landmarks to draw directly onto an HTML5 Canvas overlay.
-* **Gesture Triggers:** Pinch index finger and thumb together to draw; release to hover/move cursor.
-* **Optical Character Recognition (OCR):** Sends canvas snapshots to the Flask backend to extract handwritten text.
-* **Export Capabilities:** Download your canvas as a PNG image or recognized text as a TXT file.
-* **Theme Support:** Dark and Light mode support.
+- ✋ Real-time hand tracking using Google MediaPipe
+- 🎥 Live webcam integration
+- 🎨 Virtual drawing canvas
+- 🖍️ Multiple brush colors
+- 📏 Adjustable brush size
+- 🧹 Clear canvas option
+- 🤖 AI-powered handwritten text recognition
+- 📄 Export canvas as an image
+- 🌙 Modern responsive UI with dark mode
+- ⚡ Fast communication between frontend and backend
+- 🐳 Docker support for backend deployment
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-* **Framework:** Next.js (TypeScript)
-* **Styling:** Tailwind CSS
-* **Computer Vision:** MediaPipe Hands (`@mediapipe/hands`, `@mediapipe/camera_utils`)
-* **Icons:** Lucide React
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
 
 ### Backend
-* **Framework:** Flask (Python)
-* **OCR Engine:** Tesseract OCR / PyTesseract
-* **Image Processing:** OpenCV / Pillow
-* **Production Server:** Gunicorn / Docker
+- Python
+- Flask
+- OpenCV
+- Google MediaPipe
+- Tesseract OCR
+
+### Tools
+- Docker
+- Git
+- npm
+- pip
 
 ---
 
-## 🚀 Local Development Setup
+# 📂 Project Structure
 
-### 1. Prerequisites
-* Node.js v20+
-* Python 3.10+
-* Tesseract OCR installed locally (`sudo apt install tesseract-ocr` on Ubuntu/Mint)
+```text
+airwrite-ai/
+│
+├── backend/
+│   ├── app.py
+│   ├── inference.py
+│   ├── model.py
+│   ├── ocr.py
+│   ├── utils.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   ├── models/
+│   └── venv/
+│
+└── frontend/
+    ├── app/
+    ├── components/
+    ├── hooks/
+    ├── lib/
+    ├── public/
+    ├── package.json
+    ├── package-lock.json
+    ├── next.config.js
+    ├── tailwind.config.js
+    ├── postcss.config.js
+    ├── tsconfig.json
+    └── eslint.config.js
+```
 
 ---
 
-### 2. Backend Setup
+# ⚙️ Installation
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/your-username/airwrite-ai.git
+
+cd airwrite-ai
+```
+
+---
+
+# 📋 Prerequisites
+
+For Ubuntu / Linux Mint:
+
+```bash
+sudo apt update
+
+sudo apt install -y \
+tesseract-ocr \
+libtesseract-dev \
+ffmpeg \
+libgl1-mesa-glx
+```
+
+---
+
+# 🚀 Backend Setup
+
+Navigate to the backend folder.
 
 ```bash
 cd backend
+```
 
-# Create and activate virtual environment
+Create a virtual environment.
+
+```bash
 python3 -m venv venv
+```
+
+Activate it.
+
+```bash
 source venv/bin/activate
+```
 
-# Install dependencies
+Install dependencies.
+
+```bash
 pip install -r requirements.txt
+```
 
-# Start Flask development server
-python3 app.py
+Run the backend.
+
+```bash
+python app.py
+```
+
+The backend runs at:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+# 💻 Frontend Setup
+
+Open another terminal.
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Open:
+
+```
+http://localhost:3000
+```
+
+---
+
+# 🐳 Docker (Backend)
+
+Build Docker image
+
+```bash
+docker build -t airwrite-ai-backend .
+```
+
+Run Docker container
+
+```bash
+docker run -p 5000:5000 airwrite-ai-backend
+```
+
+---
+
+# 💡 How to Use
+
+1. Start the backend server.
+2. Start the frontend.
+3. Open **http://localhost:3000**
+4. Allow webcam permissions.
+5. Raise your index finger.
+6. Write letters or words in the air.
+7. Click **Recognize Text**.
+8. The recognized text will appear below the canvas.
+
+---
+
+# 🔄 Workflow
+
+```text
+          Webcam
+             │
+             ▼
+   MediaPipe Hand Tracking
+             │
+             ▼
+     Virtual Drawing Canvas
+             │
+             ▼
+      Capture Canvas Image
+             │
+             ▼
+         Flask Backend
+             │
+             ▼
+      Tesseract OCR Engine
+             │
+             ▼
+      Recognized Text Output
+```
+
+---
+
+# 📸 Screenshots
+
+## Home Page
+
+![Home](assets/home.png)
+
+---
+
+## Drawing on Canvas
+
+![Drawing](assets/tracking.png)
+
+---
+
+## OCR Result
+
+![OCR](assets/output.png)
+
+---
+
+# 🌟 Future Enhancements
+
+- Improve handwriting recognition accuracy
+- Multi-language OCR support
+- AI handwriting correction
+- Save OCR history
+- User authentication
+- Mobile support
+- Cloud deployment
+- Gesture-based commands
+
+---
+

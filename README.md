@@ -231,12 +231,6 @@ docker run -p 5000:5000 airwrite-ai-backend
 
 ---
 
-## Drawing on Canvas
-
-![Drawing](assets/tracking.png)
-
----
-
 ## OCR Result
 
 ![OCR](assets/output.png)
